@@ -1,0 +1,11 @@
+Aqua Client crash fix
+
+Changed ClickGuiScreen.render(): replaced renderBackground(...) with a simple
+semi-transparent dark fill. Minecraft 1.21.11 was throwing
+"Can only blur once per frame" while opening the ClickGUI because the
+background helper attempted a duplicate blur in the same frame.
+
+No other client behavior was intentionally changed.
+
+Build with the existing GitHub Actions workflow in .github/workflows/build.yml.
+The built mod jar is produced under build/libs/ (use the non-sources jar).
